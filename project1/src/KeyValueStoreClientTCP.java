@@ -5,10 +5,11 @@ import java.util.*;
 public class KeyValueStoreClientTCP {
 
     public static void main(String[] args) throws IOException {
-
+        String hostName = args[0];
+        int portNumber = Integer.parseInt(args[1]);
         while (true) {
             try (
-                    Socket socket = new Socket("localhost", 8000);
+                    Socket socket = new Socket(hostName, portNumber);
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     PrintWriter out = new PrintWriter(socket.getOutputStream(), true);) {
                 Scanner scanner = new Scanner(System.in);

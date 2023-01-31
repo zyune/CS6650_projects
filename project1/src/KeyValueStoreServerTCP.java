@@ -6,8 +6,10 @@ public class KeyValueStoreServerTCP {
     private static HashMap<String, String> store = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(8000);
-        System.out.println("Server started on port 8000...");
+        int portNumber = Integer.parseInt(args[0]);
+        ServerSocket serverSocket = new ServerSocket(portNumber);
+        System.out
+                .println(InetAddress.getLocalHost().getHostAddress() + "Server started on port " + portNumber + "...");
 
         while (true) {
             Socket socket = serverSocket.accept();
@@ -40,7 +42,10 @@ public class KeyValueStoreServerTCP {
                     e.printStackTrace();
                 } finally {
                     try {
-                        socket.close();
+                        if (socket != null) {
+                            socket.close();
+                        }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
