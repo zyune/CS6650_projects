@@ -38,6 +38,8 @@ public class KeyValueStoreServerTCP {
                         out.println("Invalid Operation");
                     }
 
+                } catch (SocketTimeoutException e) {
+                    System.out.println("Timeout exception: " + e.getMessage());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {

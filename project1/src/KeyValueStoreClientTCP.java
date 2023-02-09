@@ -32,6 +32,8 @@ public class KeyValueStoreClientTCP {
 
                 String response = in.readLine();
                 System.out.println(response);
+            } catch (SocketTimeoutException e) {
+                System.out.println("Timeout exception: " + e.getMessage());
             } catch (UnknownHostException e) {
                 System.err.println("Unknown host ");
                 System.exit(1);
