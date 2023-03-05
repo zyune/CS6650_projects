@@ -7,8 +7,10 @@ import java.util.Scanner;
 public class Client {
     public static void main(String[] args) {
         try {
+            // assign port number to portNumber
+            int portNumber = Integer.parseInt(args[0]);
             // Look up the RMI service implementation in the RMI registry
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            Registry registry = LocateRegistry.getRegistry("localhost", portNumber);
             KeyValueService service = (KeyValueService) registry.lookup("KeyValueService");
 
             // Create a scanner object to read user input

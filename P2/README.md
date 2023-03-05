@@ -27,10 +27,19 @@ The server and client code are provided in separate Java classes as follows:
 To use the system, follow these steps:
 
 1. Compile the server and client code using the Java compiler.
+   `javac Server.java`
+   `javac Client.java`
+   ![img](img/p1.png)
 
 2. Start the server by running the Server class.
+   `java Server <portnumber>`
+   ![img](img/p2.png)
 
-3. Start the client by running the Client class.
+3. Start the client by running the Client class. You can open up to 10 Client.
+   `java Client <portnumber>`
+
+   ![img](img/p3.png)
+   ![img](img/p4.png)
 
 4. Follow the instructions on the command-line interface to perform CRUD operations on the key-value store.
 
