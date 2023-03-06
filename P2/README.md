@@ -31,8 +31,10 @@ To use the system, follow these steps:
    `javac Client.java`
    ![img](img/p1.png)
 
-2. Start the server by running the Server class.
+2. Start the server by running the Server class. I added some preperation case in it.
    `java Server <portnumber>`
+   ![img](img/p5.png)
+
    ![img](img/p2.png)
 
 3. Start the client by running the Client class. You can open up to 10 Client.

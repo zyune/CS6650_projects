@@ -11,7 +11,12 @@ public class Server {
             int portNumber = Integer.parseInt(args[0]);
             // Create an instance of the RMI service implementation
             KeyValueService service = new KeyValueServiceImpl();
-
+            // Perform some operations on the key-value store
+            service.put("yune", "best");
+            service.put("apple", "red");
+            service.put("peach", "pink");
+            service.put("watermelon", "green");
+            service.put("pear", "yellow");
             // Check if the object has already been exported
             if (UnicastRemoteObject.unexportObject(service, false)) {
                 System.out.println("Unexported existing object");
