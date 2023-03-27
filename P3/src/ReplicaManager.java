@@ -49,7 +49,7 @@ public class ReplicaManager {
     }
 
     public static void main(String[] args) throws Exception {
-        int[] replicaAddresses = { 8899, 8900, 8901, 8902 };
+        int[] replicaAddresses = { 8898, 8899, 8900, 8901, 8902 };
         ReplicaManager rm = new ReplicaManager(replicaAddresses);
         System.out.println(rm);
         System.out.println("successfully created 5 instance");
