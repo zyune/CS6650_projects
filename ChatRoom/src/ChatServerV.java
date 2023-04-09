@@ -11,7 +11,6 @@ public class ChatServerV extends UnicastRemoteObject implements ChatServerInterf
     public ChatServerV() throws RemoteException {
         super();
         clients = new ArrayList<ChatClientInterface>();
-        connectToDatabase();
     }
 
     public synchronized void register(ChatClientInterface client) throws RemoteException {
@@ -31,30 +30,7 @@ public class ChatServerV extends UnicastRemoteObject implements ChatServerInterf
         }
     }
 
-    private void connectToDatabase() {
-        try {
-            String url = "jdbc:mysql://localhost:3306/ds_final";
-            String user = "root";
-            String password = "The1isyou";
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected to database");
-        } catch (SQLException e) {
-            System.err.println("Database connection error: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
     private void saveClientToDatabase(String clientID) {
-        // try {
-        // Statement stmt = conn.createStatement();
-        // String sql = "INSERT INTO clients (client_id) VALUES ('" + clientID + "')";
-        // stmt.executeUpdate(sql);
-        // stmt.close();
-        // System.out.println("Client ID saved to database: " + clientID);
-        // } catch (SQLException e) {
-        // System.err.println("Database error: " + e.getMessage());
-        // e.printStackTrace();
-        // }
         DatabaseConnector databaseConnector = new DatabaseConnector();
         try {
             databaseConnector.twoPCInsertClient(clientID);
