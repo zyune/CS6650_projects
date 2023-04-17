@@ -13,3 +13,15 @@ mysql-connector-java-8.0.30.jar: MySQL JDBC driver for connecting to MySQL datab
 protobuf-java-3.19.4.jar: Google Protocol Buffers Java library for efficient serialization of structured data.
 transactions-jdbc-5.0.8.jar, transactions-jta-5.0.8.jar, and other Atomikos JAR files: Atomikos Transactions JTA/XA implementation for distributed transaction management.
 These dependencies are most likely specified in your project's build configuration (e.g., pom.xml for Maven or build.gradle for Gradle). The classpath ensures that these libraries are available for your application at runtime.
+
+## what is .m2?
+
+The .m2 directory, usually found in a user's home directory (e.g., ~/.m2 on Unix-like systems or %USERPROFILE%\.m2 on Windows), is the local repository for Maven, a widely used build and dependency management tool for Java projects.
+
+When Maven resolves a project's dependencies, it first looks for the required artifacts in the local repository (~/.m2/repository). If the artifacts are not found, Maven downloads them from remote repositories (such as Maven Central) and caches them in the local repository for future use. This caching mechanism helps reduce build times and network usage by reusing previously downloaded dependencies.
+
+In addition to the repository directory, the .m2 directory may contain other files and folders related to Maven's configuration and operation:
+
+settings.xml: A configuration file that defines settings such as custom remote repositories, mirrors, proxy configurations, or user-specific profiles.
+wrapper: A folder used by the Maven Wrapper, a shell script and library that automatically installs the correct Maven version if not already installed on the system.
+While the .m2 directory is specific to Maven, other build tools like Gradle or Apache Ivy also maintain similar local repositories for caching dependencies.
